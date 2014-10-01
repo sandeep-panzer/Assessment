@@ -1,28 +1,11 @@
 == README
+/* bundle */
+bundle install --without production
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rake db:migrate
 
-Things you may want to cover:
+/* For test using rspec */
+rake db:migrate RAILS_ENV=test
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rspec spec/features/user_registration_spec.rb
+rspec spec/features/user_sign_in_spec.rb
