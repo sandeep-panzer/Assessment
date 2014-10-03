@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Task Management</h1>
+            <hr>
+            <!-- panel preview -->
+            <div class="col-sm-5">
+                <h4>Add new task:</h4>
+                <div class="panel panel-default">
+                    <div class="panel-body form-horizontal payment-form">
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-9">
+                                {{view Ember.TextField valueBinding="description"}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-3 control-label">Assigned To</label>
+                            <div class="col-sm-9">
+                                {{view Ember.TextField valueBinding="assigned"}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-3 control-label">Owner</label>
+                            <div class="col-sm-9">
+                                {{view Ember.TextField valueBinding="owner"}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="concept" class="col-sm-3 control-label">Status</label>
+                            <div class="col-sm-9">
+                                {{view Ember.TextField valueBinding="status"}}
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 text-right">
+                            <button type="button" class="btn btn-default preview-add-button" {{ action addEntry}}>
+                                Add Task
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / panel preview -->
+            <div class="col-sm-7">
+                <h4>All Tasks</h4>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table preview-table">
+                                <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Assigned To</th>
+                                    <th>Owner</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#each controller}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{assigned}}</td>
+                                        <td>{{owner}}</td>
+                                        <td>{{status}}</td>
+                                    </tr>
+                                {{/each}}
+                                </tbody> <!-- preview content goes here-->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
