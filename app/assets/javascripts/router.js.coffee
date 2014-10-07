@@ -5,4 +5,4 @@ Assesment.Router.map ->
   @route 'tasks', path: '/'
 
 Assesment.TasksRoute = Ember.Route.Extend
-  setupController: (controller) -> controller.set('content',[])
+  model: -> Assesment.Task.find()
